@@ -63,29 +63,20 @@
 
                 <ul class="nav nav-list nav-menu-list-style">
 
-
-
-                    <li class="dropdown">
-                        <a href="dashboard.html" class="dropdown-toggle" data-toggle="dropdown">
+                <li>
+                    <a href="dashboard.html" class="tree-toggler" data-toggle="dropdown">
                         <i class="pe-7s-graph"></i>
                         <p>Health Tracker</p>
                     </a>
+                    <ul class="nav nav-list tree">
+                        <li style="padding-left: 2em"><a href="#exam-card">Examinations<i class="fa fa-stethoscope"></i></a></li>
+                        <li style="padding-left: 2em"><a href="#test-card">Tests<i class="fa fa-bar-chart"></i></a></li>
+                    </ul>
+                </li>
+                <li>
 
-                        <ul class="dropdown-menu" style="background-color: #00ACC1">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-
-                    </li>
-                    <li>
-
-                        <li>
-                            <a href="user.html">
+                <li>
+                    <a href="user.html">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
@@ -322,7 +313,7 @@
                     </div>
 
 
-                    <div class="col-8 col-md-8">
+                    <div id="exam-card" class="col-8 col-md-8">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Tests</h4>
@@ -513,6 +504,13 @@
     $(document).ready(function() {
 
         $('[data-toggle="popover"]').popover();
+
+
+        $('ul.tree').hide();
+
+        $('a.tree-toggler').click(function () {
+            $(this).parent().children('ul.tree').toggle(300);
+        });
 
         demo.initChartist();
         $('.dropdown-toggle').dropdown()
