@@ -71,6 +71,8 @@
                     <ul class="nav nav-list tree">
                         <li style="padding-left: 2em"><a href="#exam-card">Examinations<i class="fa fa-stethoscope"></i></a></li>
                         <li style="padding-left: 2em"><a href="#test-card">Tests<i class="fa fa-bar-chart"></i></a></li>
+                        <li style="padding-left: 2em"><a href="#immu-card">Immunizations<i class="fa fa-user-md"></i></a></li>
+                        <li style="padding-left: 2em"><a href="#metr-card">Health Metrics<i class="fa fa-area-chart"></i></a></li>
                     </ul>
                 </li>
                 <li>
@@ -103,23 +105,6 @@
                 <div class="collapse navbar-collapse">
 
                     <ul class="nav navbar-nav navbar-right">
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Dropdown
-                                <b class="caret"></b>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </li>
                         <li>
                             <a href="login.html">
                                 Log out
@@ -298,8 +283,17 @@
 
                                     <tr data-toggle="popover"
                                         data-trigger="hover"
-                                        data-content="Schedule dental cleaning with your dentist every 6 months">
-
+                                        data-placement="top"
+                                        data-content='<div class="row card card-outline-success m-x-auto m-b-2">
+                                                        <div class=card-body>
+                                                            <div class="col-md-7 text-xs-center p-y-1">
+                                                                <p>Hey, your cholesterol`s a little high. You might consider eating more apples</p>
+                                                            </div>
+                                                            <div class="col-md-5 text-xs-right text-success p-y-1">
+                                                                <p>Copay 10%</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>'>
                                         <td><i class="fa fa-close" style="font-size:36px;color:red"></i></td>
                                         <td>Dental Check-Up</td>
                                         <td>06/01/2012</td>
@@ -340,7 +334,8 @@
                                     </tr>
                                     <tr data-toggle="popover"
                                         data-trigger="hover"
-                                        data-content="Your Cholesterol is High">
+                                        data-placement="top"
+                                        data-content="test">
                                         <td><i class="fa fa-check" style="font-size:36px;color:green"></i></td>
                                         <td>Cholesterol</td>
                                         <td>03/02/2017</td>
@@ -509,14 +504,16 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="popover"]').popover({ html : true});
 
+/*
 
         $('ul.tree').hide();
 
         $('a.tree-toggler').click(function () {
             $(this).parent().children('ul.tree').toggle(300);
         });
+*/
 
         demo.initChartist();
         $('.dropdown-toggle').dropdown()
